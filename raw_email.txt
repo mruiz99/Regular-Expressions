@@ -1,0 +1,125 @@
+Delivered-To: dheidenb@g.umd.edu
+Received: by 10.107.97.16 with SMTP id v16csp1457303iob;
+        Fri, 6 Apr 2018 23:52:05 -0700 (PDT)
+X-Google-Smtp-Source: AIpwx49QF9wByhFrrDVu8jOcevoYTjBgsXVpFigpy/M+frwwbaztCehK85I/7Agu5xHy6h+wiY40
+X-Received: by 2002:a17:902:44c:: with SMTP id 70-v6mr30630830ple.354.1523083925115;
+        Fri, 06 Apr 2018 23:52:05 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1523083925; cv=none;
+        d=google.com; s=arc-20160816;
+        b=mHordDyZArJVKMkNOjGxO788LUlIsOruQk0uDRLD6/aYXlgFwfvPlw1c4HIIYwHPbK
+         ppHYGm1o+7e8BpGHn2YRYbeS6SlndcVdbA3pel5P5iVbyy8hjFuHfqRElNEMXBJHAzOl
+         D6O0YSaN/x2rhurT+a8IIxlsT7tsfjrN1lcoOAOA/kOOWqWEBHUFeVUOivHrYWyDB/+5
+         mlQ/d/6yF9XDZSkC1P4WV3KdJJ1fdtv99MtcYIOpkr13AR11aCUldZnjdaM3odqxhyAl
+         gR2BoN/Am2u07m0F0F2KZUT3u9GHrqylRzrrKNtKKXuttNmeohUaSd7hr0G4N6sh9yH2
+         vXdg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=sender:errors-to:content-transfer-encoding:list-subscribe:list-help
+         :list-post:list-archive:list-unsubscribe:list-id:precedence:subject
+         :content-language:mime-version:user-agent:date:message-id:from:to
+         :delivered-to:arc-authentication-results;
+        bh=nY2wvKwd0Meofh0bXODaiq/0QjtJBsdlJzCxf/UJoCY=;
+        b=MU07sg6FYpZU/IbusgB96zAL05mbuFa835rgIEvMgKL4kK5LF10oxRIbMow7df0gpz
+         LuZhKPAba0FENQp7VdjFwN9wRHFuQxQjBpMozxxvJeXGJGWvnj8h/0q6ALi362+ZTjKr
+         Loxxmad9iilPOaEbXefYUY4p9pz282Owa/bRXVm7oBFEMA5RxNbcXCSudLw+QxyLIVyT
+         K8OhnsVgDUjp5zJu+BhlN0CCJK6nDENZSeT4MnHut56XsrOX5c7FHnz3DDOKZFB6Swh3
+         i7q9wXsjn0ocp/lt9hSmPH7dXWVFLbFaG0sx6lzbwtyxEiH9gK2KrxqsvT2f7LZ31Bui
+         2U4g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=permerror (google.com: domain of air-l-bounces@listserv.aoir.org uses a mechanism not recognized by this client. unknown
+  mechanisms: )) smtp.mailfrom=air-l-bounces@listserv.aoir.org
+Return-Path: <air-l-bounces@listserv.aoir.org>
+Received: from esa2.umd.iphmx.com (esa2.umd.iphmx.com. [68.232.143.84])
+        by mx.google.com with ESMTPS id b7-v6si10620325pla.345.2018.04.06.23.52.04
+        for <dheidenb@g.umd.edu>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 06 Apr 2018 23:52:05 -0700 (PDT)
+Received-SPF: permerror (google.com: domain of air-l-bounces@listserv.aoir.org uses a mechanism not recognized by this client. unknown
+  mechanisms: )) client-ip=64.90.62.202;
+Authentication-Results: mx.google.com;
+       spf=permerror (google.com: domain of air-l-bounces@listserv.aoir.org uses a mechanism not recognized by this client. unknown
+  mechanisms: )) smtp.mailfrom=air-l-bounces@listserv.aoir.org
+X-IronPort-AV: E=Sophos;i="5.48,418,1517893200";
+    d="scan'208";a="312043989"
+Received: from pdx1-mailman01.dreamhost.com ([64.90.62.202])
+  by esa2.umd.iphmx.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384; 07 Apr 2018 02:52:03 -0400
+Received: from pdx1-mailman01.dreamhost.com (pdx1-mailman01.dreamhost.com [IPv6:::1]) by pdx1-mailman01.dreamhost.com (Postfix) with ESMTP id 168E221EE6; Fri,
+  6 Apr 2018 23:52:03 -0700 (PDT)
+X-Original-To: air-l@listserv.aoir.org
+Delivered-To: air-l-aoir.org@pdx1-mailman01.dreamhost.com
+Received: from mail-out01.uio.no (mail-out01.uio.no [129.240.10.50]) by pdx1-mailman01.dreamhost.com (Postfix) with ESMTP id 85E69205E9; Fri,
+  6 Apr 2018 23:51:50 -0700 (PDT)
+Received: from mail-mx06.uio.no ([129.240.10.40]) by mail-out01.uio.no with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1) (envelope-from <c.m.ess@media.uio.no>) id 1f4hhV-0005Cy-6U; Sat, 07 Apr 2018 08:51:49 +0200
+Received: from 42.249.16.62.customer.cdi.no ([62.16.249.42] helo=[192.168.1.122]) by mail-mx06.uio.no with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) user charlees (Exim 4.90_1) (envelope-from <c.m.ess@media.uio.no>) id 1f4hhU-00078a-7j; Sat, 07 Apr 2018 08:51:49 +0200
+To: "ethics@listserv.aoir.org" <ethics@listserv.aoir.org>, air-l <air-l@listserv.aoir.org>
+From: "Charles M. Ess" <c.m.ess@media.uio.no>
+Message-ID: <451dfdd2-358e-1e58-ccae-4718289f3922@media.uio.no>
+Date: Sat, 7 Apr 2018 08:51:47 +0200
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:52.0) Gecko/20100101 Thunderbird/52.6.0
+MIME-Version: 1.0
+Content-Language: en-US
+X-UiO-SPF-Received: Received-SPF: neutral (mail-mx06.uio.no: 62.16.249.42 is neither permitted nor denied by domain of media.uio.no) client-ip=62.16.249.42; envelope-from=c.m.ess@media.uio.no; helo=[192.168.1.122];
+X-UiO-Spam-info: not spam, SpamAssassin (score=-5.0, required=5.0, autolearn=disabled, TVD_RCVD_IP=0.001, UIO_MAIL_IS_INTERNAL=-5, uiobl=NO, uiouri=NO)
+X-UiO-Scanned: 2A1DE29A1856AF7E63BF695DDAA481B35A5432E7
+X-UiOonly: 9F75DE00B30F1A6223FEFA9B8083E5AC9F129DD9
+Subject: [Air-L] Terms of Service not legally binding?
+X-BeenThere: air-l@listserv.aoir.org
+X-Mailman-Version: 2.1.23
+Precedence: list
+List-Id: Association of Internet Researchers <air-l-aoir.org>
+List-Unsubscribe: <http://listserv.aoir.org/options.cgi/air-l-aoir.org>, <mailto:air-l-request@listserv.aoir.org?subject=unsubscribe>
+List-Archive: <http://listserv.aoir.org/pipermail/air-l-aoir.org/>
+List-Post: <mailto:air-l@listserv.aoir.org>
+List-Help: <mailto:air-l-request@listserv.aoir.org?subject=help>
+List-Subscribe: <http://listserv.aoir.org/listinfo.cgi/air-l-aoir.org>, <mailto:air-l-request@listserv.aoir.org?subject=subscribe>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Errors-To: air-l-bounces@listserv.aoir.org
+Sender: Air-L <air-l-bounces@listserv.aoir.org>
+
+Dear colleagues,
+
+With apologies for spamming the lists - on behalf of both a student 
+project and our development of further refinements in internet research 
+ethics I'd like to ask the following.
+
+I've heard somewhere recently that a U.S. court has ruled that Terms of 
+Service are not necessarily legally binding.
+If anyone can forward more exact details of the ruling, I'd be very 
+grateful indeed.
+
+Why? There is considerable discussion regarding the creation of fake 
+profiles as part of research into social media, algorithms, etc.  I have 
+the impression that this has become common practice, and this ruling may 
+give some direct and/or indirect support to arguments for such a 
+practice.  (With important caveats, generally a good thing in my view, 
+FWIW.)
+
+At the same time, however, Norwegian law and thereby research ethics, as 
+a start, tend to be considerably more strict than the U.S. (and even, in 
+some instances, the E.U.).  I would like to figure out the differences 
+and resulting nuances in the implications for research ethics - both for 
+the sake of the general example and for an MA student project that I 
+have the pleasure of supervising.
+
+Many thanks in advance for any tips and suggestions.
+
+All best,
+- charles ess
+
+-- 
+Professor in Media Studies
+Department of Media and Communication
+University of Oslo
+<http://www.hf.uio.no/imk/english/people/aca/charlees/index.html>
+
+Postboks 1093
+Blindern 0317
+Oslo, Norway
+c.m.ess@media.uio.no
+_______________________________________________
+The Air-L@listserv.aoir.org mailing list
+is provided by the Association of Internet Researchers http://aoir.org
+Subscribe, change options or unsubscribe at: http://listserv.aoir.org/listinfo.cgi/air-l-aoir.org
+
+Join the Association of Internet Researchers:
+http://www.aoir.org/
